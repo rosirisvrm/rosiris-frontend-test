@@ -18,8 +18,8 @@ import { useAuth } from '@/hooks/useAuth';
 
 export const LoginScreen: React.FC = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState<string>('carlospea13+1@gmail.com');
-  const [password, setPassword] = useState<string>('123456');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const { login, loading, error, isAuthenticated } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 

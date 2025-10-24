@@ -6,14 +6,14 @@ import { WelcomeScreen } from '@/components/Welcome/WelcomeScreen';
 import { DevicesList } from '@/components/Devices/DevicesList';
 import { CharacterList } from '@/components/Characters/CharacterList';
 
-interface PrivateRouteProps {
-  children: React.ReactNode;
-}
+// interface PrivateRouteProps {
+//   children: React.ReactNode;
+// }
 
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
-  const { isAuthenticated } = useAuth();
-  return isAuthenticated ? <>{children}</> : <Navigate to="/" />;
-};
+// const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
+//   const { isAuthenticated } = useAuth();
+//   return isAuthenticated ? <>{children}</> : <Navigate to="/" />;
+// };
 
 export const AppRoutes: React.FC = () => {
   return (
@@ -29,9 +29,9 @@ export const AppRoutes: React.FC = () => {
         <Route
           path="/welcome"
           element={
-            <PrivateRoute>
+            // <PrivateRoute>
               <AppLayout />
-            </PrivateRoute>
+            // </PrivateRoute>
           }
         >
           <Route index element={<WelcomeScreen />} />
@@ -40,9 +40,9 @@ export const AppRoutes: React.FC = () => {
         <Route
           path="/devices"
           element={
-            <PrivateRoute>
+            // <PrivateRoute>
               <AppLayout />
-            </PrivateRoute>
+            // </PrivateRoute>
           }
         >
           <Route index element={<DevicesList />} />
@@ -51,9 +51,9 @@ export const AppRoutes: React.FC = () => {
         <Route
           path="/characters"
           element={
-            <PrivateRoute>
+            // <PrivateRoute>
               <AppLayout />
-            </PrivateRoute>
+            // </PrivateRoute>
           }
         >
           <Route index element={<CharacterList />} />
