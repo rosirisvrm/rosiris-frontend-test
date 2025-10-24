@@ -15,6 +15,10 @@ export const loginService = async (email: string, password: string): Promise<Log
           id: '1',
           email: 'carlospea13+1@gmail.com',
           name: 'Carlos Peña',
+          modules: [
+            { name: 'Dispositivos', route: '/devices' },
+            { name: 'Personajes', route: '/characters' },
+          ],
         },
         modules: [
           { name: 'Dispositivos', route: '/devices' },
