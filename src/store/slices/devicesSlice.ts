@@ -8,7 +8,7 @@ export const fetchDevices = createAsyncThunk<
   { rejectValue: string }
 >(
   'devices/fetch',
-  async ({ limit = 5, offset = 0, search = '', reset = false }, { rejectWithValue }) => {
+  async ({ limit = 6, offset = 0, search = '', reset = false }, { rejectWithValue }) => {
     try {
       const response = await fetchDevicesService(limit, offset, search);
       const results = response.data;

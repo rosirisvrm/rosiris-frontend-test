@@ -6,11 +6,11 @@ const USE_MOCK = true; // Change to false when the API in working
 export const loginService = async (email: string, password: string): Promise<LoginResponse> => {
   // Mock data
   if (USE_MOCK) {
-    await new Promise(resolve => setTimeout(resolve, 800)); // Simular delay
+    await new Promise(resolve => setTimeout(resolve, 800));
     
     if (email === 'carlospea13+1@gmail.com' && password === '123456') {
       return {
-        token: 'mock-token-12345-valid',
+        token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9jcmVhdGVkIjoiMjAyNS0xMC0yM1QwMTo1MzozNy42MDhaIn0.imf9k4HMWaDlRrCggSmWT7THEnmeCmRy5Qz82VXvb3E',
         user: {
           id: '1',
           email: 'carlospea13+1@gmail.com',

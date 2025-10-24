@@ -24,7 +24,7 @@ export const useDevices = (): UseDevicesReturn => {
     const currentOffset = reset ? 0 : offset;
 
     dispatch(fetchDevices({ 
-      limit: 5, 
+      limit: 6, 
       offset: currentOffset, 
       search,
       reset
@@ -36,7 +36,7 @@ export const useDevices = (): UseDevicesReturn => {
     if (!hasMore || loading) return;
     
     dispatch(fetchDevices({ 
-      limit: 5, 
+      limit: 6, 
       offset, 
       search: '',
       reset: false

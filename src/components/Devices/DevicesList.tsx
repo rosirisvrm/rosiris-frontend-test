@@ -3,7 +3,7 @@ import {
   Box, 
   Grid, 
   CircularProgress, 
-  // Button, 
+  Button, 
   Typography, 
   Alert 
 } from '@mui/material';
@@ -15,7 +15,7 @@ import type { Device } from '@/types/device.types';
 export const DevicesList: React.FC = () => {
   const { 
     devices, loading, error, hasMore, loadDevices, 
-    // loadMore, 
+    loadMore, 
   } = useDevices();
 
   useEffect(() => {
@@ -28,9 +28,9 @@ export const DevicesList: React.FC = () => {
   //   loadDevices(search, true);
   // };
 
-  // const handleLoadMore = () => {
-  //   loadMore();
-  // };
+  const handleLoadMore = () => {
+    loadMore();
+  };
 
   return (
     <Box sx={{ py: 3 }}>
@@ -70,12 +70,13 @@ export const DevicesList: React.FC = () => {
         </Box>
       )}
 
-      {/* {hasMore && !loading && devices.length > 0 && (
+      {hasMore && !loading && devices.length > 0 && (
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
           <Button
             variant="contained"
             onClick={handleLoadMore}
             disabled={loading}
+            disableElevation
             sx={{
               textTransform: 'none',
               px: 4,
@@ -83,12 +84,13 @@ export const DevicesList: React.FC = () => {
               bgcolor: '#000',
               '&:hover': { bgcolor: '#333' },
               fontWeight: 600,
+              borderRadius: 2,
             }}
           >
             Cargar más
           </Button>
         </Box>
-      )} */}
+      )}
 
       {!hasMore && devices.length > 0 && !loading && (
         <Box sx={{ textAlign: 'center', mt: 4 }}>
