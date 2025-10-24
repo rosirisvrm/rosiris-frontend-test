@@ -91,7 +91,7 @@ export const LoginScreen: React.FC = () => {
               <TextField
                 fullWidth
                 type={showPassword ? 'text' : 'password'}
-                placeholder="Ingresa tu contraseña (al menos 6 caracteres)"
+                placeholder="Ingresa tu contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required

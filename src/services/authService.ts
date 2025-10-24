@@ -1,7 +1,32 @@
 import { apiClient } from './api';
 import type { LoginResponse } from '@/types/auth.types';
 
+const USE_MOCK = true; // Change to false when the API in working
+
 export const loginService = async (email: string, password: string): Promise<LoginResponse> => {
+  // Mock data
+  if (USE_MOCK) {
+    await new Promise(resolve => setTimeout(resolve, 800)); // Simular delay
+    
+    if (email === 'carlospea13+1@gmail.com' && password === '123456') {
+      return {
+        token: 'mock-token-12345-valid',
+        user: {
+          id: '1',
+          email: 'carlospea13+1@gmail.com',
+          name: 'Carlos Peña',
+        },
+        modules: [
+          { name: 'Dispositivos', route: '/devices' },
+          { name: 'Personajes', route: '/characters' },
+        ],
+      };
+    } else {
+      throw new Error('Credenciales incorrectas');
+    }
+  }
+
+  // Real Api
   try {
     const response = await apiClient.post<LoginResponse>('/login', {
       email,

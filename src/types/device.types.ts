@@ -8,7 +8,7 @@ export interface Device {
   id_device_model: number;
   photo: string;
   settings_device: SettingDevice;
-  status: 0;
+  status: number;
 }
 
 export interface SettingDevice {

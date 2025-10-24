@@ -22,7 +22,7 @@ export const useDevices = (): UseDevicesReturn => {
     // if (!token) return;
     
     const currentOffset = reset ? 0 : offset;
-    console.log('entrando');
+
     dispatch(fetchDevices({ 
       limit: 5, 
       offset: currentOffset, 
