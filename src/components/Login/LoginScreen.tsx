@@ -77,7 +77,7 @@ export const LoginScreen: React.FC = () => {
               </Typography>
               <TextField
                 fullWidth
-                placeholder="Ingresa tu correo electrónico (ejemplo@gmail.com)"
+                placeholder="Ingresa tu correo electrónico"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 sx={{ mb: 2, '& .MuiInputBase-root': { borderRadius: 2 } }}

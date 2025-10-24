@@ -8,7 +8,11 @@ interface DeviceSearchProps {
 }
 
 export const DeviceSearch: React.FC<DeviceSearchProps> = ({ onSearch }) => {
-  const { searchValue, handleSearchChange } = useSearch(onSearch, 500);
+  const { searchValue, handleSearchChange } = useSearch(onSearch, 800);
+
+  const handleBlur = () => {
+    onSearch(searchValue);
+  };
 
   return (
     <TextField
@@ -16,6 +20,7 @@ export const DeviceSearch: React.FC<DeviceSearchProps> = ({ onSearch }) => {
       placeholder="Buscar dispositivos..."
       value={searchValue}
       onChange={(e) => handleSearchChange(e.target.value)}
+      onBlur={handleBlur}
       InputProps={{
         startAdornment: <SearchIcon sx={{ mr: 1, color: 'text.secondary' }} />,
       }}

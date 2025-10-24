@@ -8,15 +8,12 @@ import {
   Alert 
 } from '@mui/material';
 import { DeviceCard } from './DeviceCard';
-// import { DeviceSearch } from './DevicesSearch';
+import { DeviceSearch } from './DevicesSearch';
 import { useDevices } from '@/hooks/useDevice';
 import type { Device } from '@/types/device.types';
 
 export const DevicesList: React.FC = () => {
-  const { 
-    devices, loading, error, hasMore, loadDevices, 
-    loadMore, 
-  } = useDevices();
+  const { devices, loading, error, hasMore, loadDevices, loadMore } = useDevices();
 
   useEffect(() => {
     if (devices.length === 0) {
@@ -24,9 +21,15 @@ export const DevicesList: React.FC = () => {
     }
   }, [devices, loadDevices]);
 
-  // const handleSearch = (search: string) => {
-  //   loadDevices(search, true);
-  // };
+  const handleSearch = (search: string) => {
+    const trimmed = search.trim();
+
+    if (trimmed === '') {
+      loadDevices('', true);
+    } else {
+      loadDevices(trimmed, true);
+    }
+  };
 
   const handleLoadMore = () => {
     loadMore();
@@ -38,9 +41,9 @@ export const DevicesList: React.FC = () => {
         Dispositivos
       </Typography>
 
-      {/* {devices.length > 0 && 
+      {devices.length > 0 && 
         <DeviceSearch onSearch={handleSearch} />
-      } */}
+      }
 
       {error && (
         <Alert severity="error" sx={{ mb: 3 }}>

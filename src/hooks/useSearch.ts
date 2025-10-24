@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 interface UseSearchReturn {
   searchValue: string;
@@ -8,10 +8,12 @@ interface UseSearchReturn {
 
 export const useSearch = (
   onSearch?: (value: string) => void,
-  delay: number = 500
+  delay: number = 800
 ): UseSearchReturn => {
+  
   const [searchValue, setSearchValue] = useState<string>('');
   const [debouncedValue, setDebouncedValue] = useState<string>('');
+  const previousValue = useRef<string>('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,7 +24,12 @@ export const useSearch = (
   }, [searchValue, delay]);
 
   useEffect(() => {
-    if (onSearch) {
+    if (
+      onSearch &&
+      debouncedValue !== previousValue.current &&
+      debouncedValue.trim() !== ''
+    ) {
+      previousValue.current = debouncedValue;
       onSearch(debouncedValue);
     }
   }, [debouncedValue, onSearch]);
