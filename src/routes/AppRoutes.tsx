@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { LoginScreen } from '@/components/Login/LoginScreen';
@@ -30,9 +29,9 @@ export const AppRoutes: React.FC = () => {
         <Route
           path="/welcome"
           element={
-            // <PrivateRoute>
+            <PrivateRoute>
               <AppLayout />
-            // </PrivateRoute>
+            </PrivateRoute>
           }
         >
           <Route index element={<WelcomeScreen />} />
@@ -41,9 +40,9 @@ export const AppRoutes: React.FC = () => {
         <Route
           path="/devices"
           element={
-            // <PrivateRoute>
+            <PrivateRoute>
               <AppLayout />
-            // </PrivateRoute>
+            </PrivateRoute>
           }
         >
           <Route index element={<DevicesList />} />
@@ -52,9 +51,9 @@ export const AppRoutes: React.FC = () => {
         <Route
           path="/characters"
           element={
-            // <PrivateRoute>
+            <PrivateRoute>
               <AppLayout />
-            // </PrivateRoute>
+            </PrivateRoute>
           }
         >
           <Route index element={<CharacterList />} />

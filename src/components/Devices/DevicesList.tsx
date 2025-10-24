@@ -1,12 +1,22 @@
 import React, { useEffect } from 'react';
-import { Box, Grid, CircularProgress, Button, Typography, Alert } from '@mui/material';
+import { 
+  Box, 
+  Grid, 
+  CircularProgress, 
+  // Button, 
+  Typography, 
+  Alert 
+} from '@mui/material';
 import { DeviceCard } from './DeviceCard';
-import { DeviceSearch } from './DevicesSearch';
+// import { DeviceSearch } from './DevicesSearch';
 import { useDevices } from '@/hooks/useDevice';
 import type { Device } from '@/types/device.types';
 
 export const DevicesList: React.FC = () => {
-  const { devices, loading, hasMore, loadDevices, loadMore, error } = useDevices();
+  const { 
+    devices, loading, error, hasMore, loadDevices, 
+    // loadMore, 
+  } = useDevices();
 
   useEffect(() => {
     if (devices.length === 0) {

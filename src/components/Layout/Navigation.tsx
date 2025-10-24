@@ -19,6 +19,7 @@ export const Navigation: React.FC = () => {
   const currentTab = tabs.findIndex(tab => location.pathname === tab.path);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number): void => {
+    console.log('event :', event);
     navigate(tabs[newValue].path);
   };
 

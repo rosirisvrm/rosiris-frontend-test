@@ -18,6 +18,7 @@ export const CharacterList: React.FC = () => {
   };
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, page: number): void => {
+    console.log('event :', event);
     loadPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
