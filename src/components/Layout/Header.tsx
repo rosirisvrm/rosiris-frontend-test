@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
 
   return (
     <AppBar position="static" elevation={0} sx={{ bgcolor: '#fff', color: '#000', px: { xs: 3, lg: 7 }, py: 1, borderBottom: '1px solid #e5e7eb' }}>
-      <Toolbar>
+      <Toolbar sx={{ ml: { xs: 4, md: 0 } }}>
         <Box sx={{ flex: 1 }}>
           <Typography variant="h5" fontWeight="600" fontSize={24}>
             Panel de Control
