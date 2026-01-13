@@ -8,13 +8,13 @@ export const loginService = async (email: string, password: string): Promise<Log
   if (USE_MOCK) {
     await new Promise(resolve => setTimeout(resolve, 800));
     
-    if (email === 'carlospea13+1@gmail.com' && password === '123456') {
+    if (email === 'admin@email.com' && password === '123456') {
       return {
-        token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9jcmVhdGVkIjoiMjAyNS0xMC0yM1QwMTo1MzozNy42MDhaIn0.imf9k4HMWaDlRrCggSmWT7THEnmeCmRy5Qz82VXvb3E',
+        token: '1234567890',
         user: {
           id: '1',
-          email: 'carlospea13+1@gmail.com',
-          name: 'Carlos Peña',
+          email: 'admin@email.com',
+          name: 'Admin',
           modules: [
             { name: 'Dispositivos', route: '/devices' },
             { name: 'Personajes', route: '/characters' },

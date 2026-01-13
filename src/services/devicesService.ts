@@ -2,7 +2,7 @@ import { apiClient } from './api';
 import type { DevicesResponse } from '@/types/device.types';
 import { MOCK_DEVICES } from '@/data/devices';
 
-const USE_MOCK = false; // Change to false when api is working
+const USE_MOCK = true; // Change to false when api is working
 
 export const fetchDevicesService = async (
   limit: number = 5,
@@ -44,10 +44,6 @@ export const fetchDevicesService = async (
       offset,
       search,
     };
-
-    // if (search) {
-    //   params.search = search;
-    // }
 
     const response = await apiClient.get<DevicesResponse>('/devices', { params });
     return response as unknown as DevicesResponse;

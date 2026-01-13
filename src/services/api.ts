@@ -1,6 +1,6 @@
 import axios, { AxiosError, type AxiosInstance } from 'axios';
 
-const API_BASE_URL = 'https://api.qa.myintelli.net/v1';
+const API_BASE_URL = ''; // TODO: Add real API base URL here
 
 export const apiClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
